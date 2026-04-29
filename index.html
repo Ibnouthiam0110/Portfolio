@@ -297,6 +297,74 @@ footer{padding:2rem 5vw;border-top:1px solid var(--border);display:flex;align-it
   .cms{padding:0.8rem}
   .cms strong{font-size:1.2rem}
 }
+/* ================= FIX MOBILE FINAL ================= */
+
+/* 1. Empêcher les débordements */
+html, body {
+  overflow-x: hidden;
+}
+
+/* 2. HERO : éviter texte coupé */
+.hero h1 {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* 3. Corriger largeur contenu */
+.hero-desc,
+.hero-quote {
+  max-width: 100%;
+}
+
+/* 4. Fix des stats (ça déborde souvent) */
+.hero-stats {
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* 5. FIX IFRAME PROJETS (très important) */
+@media(max-width:768px){
+  .pprev iframe {
+    width: 100%;
+    height: 100%;
+    transform: none;
+  }
+}
+
+/* 6. Empêcher cartes projets de déborder */
+.pc {
+  width: 100%;
+}
+
+/* 7. Fix container */
+.container {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+/* 8. Fix boutons mobile */
+@media(max-width:600px){
+  .hero-btns {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* 9. Fix images global */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 10. Fix textes longs */
+p, h1, h2, h3 {
+  word-wrap: break-word;
+}
+
 </style>
 </head>
 <body>
