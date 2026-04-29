@@ -364,7 +364,80 @@ img {
 p, h1, h2, h3 {
   word-wrap: break-word;
 }
+/* 🔥 FIX GLOBAL MOBILE CUT */
+body, html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
+/* HERO FIX */
+.hero {
+  padding: 5rem 4vw 2rem;
+}
+
+.hero-inner {
+  grid-template-columns: 1fr !important;
+  gap: 2rem;
+}
+
+/* TITRE RESPONSIVE */
+.hero h1 {
+  font-size: clamp(2.2rem, 8vw, 3.2rem);
+  line-height: 1.1;
+  word-break: break-word;
+}
+
+/* TEXTE */
+.hero-desc,
+.hero-quote {
+  max-width: 100%;
+}
+
+/* TICKER FIX */
+.dual-ticker {
+  overflow: hidden;
+}
+
+.ticker-belt {
+  width: max-content;
+}
+
+/* BOUTONS */
+.hero-btns {
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* NAV LOGO */
+.logo-img {
+  height: 45px;
+}
+
+/* IFRAME PREVIEW FIX */
+.pprev iframe {
+  transform: scale(0.5);
+  width: 200%;
+  height: 200%;
+}
+
+/* SAFE SPACING MOBILE */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 4.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.6rem;
+  }
+}
 </style>
 </head>
 <body>
