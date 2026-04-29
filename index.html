@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ibnou Thiam — Développeur Web</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="logo1.png">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -32,8 +33,10 @@ body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:400;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5vw;transition:background .3s,border .3s}
 nav.stuck{background:rgba(10,10,8,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.nlogo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:-.02em;color:var(--ink);cursor:pointer}
-.nlinks{display:flex;gap:2rem;list-style:none}
+.logo-img {
+  height: 55px;   /* ajuste selon ton design */
+  width: auto;
+}.nlinks{display:flex;gap:2rem;list-style:none}
 .nlinks a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:400;transition:color .2s}
 .nlinks a:hover{color:var(--ink)}
 .ncta{background:var(--a2);color:#0a0a08;padding:.48rem 1.3rem;border-radius:.4rem;font-size:.82rem;font-weight:600;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;letter-spacing:.01em}
@@ -262,7 +265,9 @@ footer{padding:2rem 5vw;border-top:1px solid var(--border);display:flex;align-it
 <div id="curf"></div>
 
 <nav id="nav">
-  <div class="nlogo">Ibnou Thiam</div>
+ <div class="nlogo">
+  <img src="logo1.png" alt="Ibnou Thiam" class="logo-img" />
+</div>
   <ul class="nlinks">
     <li><a href="#apropos">À propos</a></li>
     <li><a href="#competences">Compétences</a></li>
@@ -273,6 +278,9 @@ footer{padding:2rem 5vw;border-top:1px solid var(--border);display:flex;align-it
   <button class="ncta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Me contacter</button>
   <button class="hbg" id="hbg"><span></span><span></span><span></span></button>
 </nav>
+
+
+
 
 <div class="mmenu" id="mmenu">
   <button class="mclose" id="mclose">✕</button>
