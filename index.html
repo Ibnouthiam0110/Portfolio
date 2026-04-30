@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ibnou Thiam — Développeur Web</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="logo1.png">
@@ -33,11 +33,7 @@ body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:400;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5vw;transition:background .3s,border .3s}
 nav.stuck{background:rgba(10,10,8,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.logo-img {
-  height: 55px;
-  width: auto;
-  display: block;
-}
+.logo-img{height:45px;width:auto}
 .nlinks{display:flex;gap:2rem;list-style:none}
 .nlinks a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:400;transition:color .2s}
 .nlinks a:hover{color:var(--ink)}
@@ -52,16 +48,15 @@ nav.stuck{background:rgba(10,10,8,.95);backdrop-filter:blur(20px);border-bottom:
 .mclose{position:absolute;top:1.5rem;right:5vw;font-size:1.8rem;background:none;border:none;color:var(--ink);cursor:pointer}
 
 /* ─── HERO ─── */
-.hero{min-height:100vh;display:flex;align-items:center;padding:6rem 5vw 3rem;position:relative;overflow:hidden;background:var(--bg)}
-.hero-inner{display:grid;grid-template-columns:1fr 400px;gap:5rem;align-items:center;width:100%;max-width:1280px;margin:0 auto;position:relative;z-index:2}
-
-/* subtle radial glow */
+.hero{min-height:100vh;display:flex;align-items:center;padding:6rem 5vw 3rem;position:relative;overflow:hidden;background:var(--bg);width:100%}
+.hero-inner{display:grid;grid-template-columns:1fr 400px;gap:5rem;align-items:center;width:100%;max-width:1280px;margin:0 auto;position:relative;z-index:2;min-width:0}
 .hero::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(200,169,110,.06) 0%,transparent 70%);top:-10%;right:5%;pointer-events:none;z-index:0}
 .hero::after{content:'';position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(200,169,110,.04) 0%,transparent 70%);bottom:10%;left:10%;pointer-events:none;z-index:0}
 
+.hero-inner > div:first-child{min-width:0}
 .hero-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--a2);margin-bottom:1.6rem;display:flex;align-items:center;gap:.7rem}
 .hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--a2)}
-.hero h1{font-family:'Syne',sans-serif;font-size:clamp(3rem,5.5vw,5.2rem);font-weight:800;letter-spacing:-.04em;line-height:.98;color:var(--ink);margin-bottom:1.8rem}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,5.5vw,5.2rem);font-weight:800;letter-spacing:-.04em;line-height:1.05;color:var(--ink);margin-bottom:1.8rem;word-break:break-word;overflow-wrap:break-word}
 .hero h1 em{font-style:normal;color:var(--a2)}
 .hero-desc{color:var(--muted);font-size:1rem;font-weight:300;max-width:440px;margin-bottom:1.5rem;line-height:1.85}
 .hero-desc strong{color:var(--ink2);font-weight:500}
@@ -90,7 +85,7 @@ nav.stuck{background:rgba(10,10,8,.95);backdrop-filter:blur(20px);border-bottom:
 .bs{background:rgba(255,255,255,.05);color:var(--ink);border:1.5px solid var(--border)}
 .bs:hover{border-color:rgba(255,255,255,.18);transform:translateY(-2px)}
 
-.hero-stats{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.hero-stats{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid var(--border);flex-wrap:wrap}
 .snum{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:var(--ink);line-height:1}
 .slbl{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:.2rem}
 
@@ -100,7 +95,6 @@ nav.stuck{background:rgba(10,10,8,.95);backdrop-filter:blur(20px);border-bottom:
 .photo-img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:1.5rem;display:block;border:1px solid var(--border)}
 .photo-placeholder{width:100%;aspect-ratio:3/4;border-radius:1.5rem;background:var(--bg2);border:1.5px dashed rgba(255,255,255,.1);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;color:var(--muted);font-size:.82rem;text-align:center;padding:2rem}
 .ph-init{width:90px;height:90px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--a2)}
-
 .fb{position:absolute;background:rgba(15,15,12,.9);border:1px solid rgba(255,255,255,.1);border-radius:.7rem;padding:.5rem .9rem;display:flex;align-items:center;gap:.45rem;font-size:.68rem;font-weight:500;white-space:nowrap;backdrop-filter:blur(10px);color:var(--ink2);box-shadow:0 4px 20px rgba(0,0,0,.5)}
 .fbd{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .fb1{top:1.5rem;left:-3.5rem;animation:fc1 4s ease-in-out infinite}
@@ -111,10 +105,10 @@ nav.stuck{background:rgba(10,10,8,.95);backdrop-filter:blur(20px);border-bottom:
 
 /* SECTIONS */
 section{padding:7rem 5vw}
-.container{max-width:1280px;margin:0 auto}
+.container{max-width:1280px;margin:0 auto;width:100%}
 .eye{display:inline-flex;align-items:center;gap:.6rem;font-size:.68rem;font-weight:600;color:var(--a2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.7rem}
 .eye::before{content:'';width:24px;height:1px;background:var(--a2)}
-.stitle{font-family:'Syne',sans-serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;color:var(--ink);margin-bottom:.8rem}
+.stitle{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;color:var(--ink);margin-bottom:.8rem}
 .ssub{color:var(--muted);max-width:480px;font-weight:300;font-size:.95rem}
 
 /* ABOUT */
@@ -136,7 +130,7 @@ section{padding:7rem 5vw}
 
 /* SKILLS */
 #competences{background:var(--bg)}
-.skgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem;margin-top:3.5rem}
+.skgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem;margin-top:3.5rem}
 .skc{background:var(--card);border:1px solid var(--border);border-radius:1.2rem;padding:1.6rem;transition:all .3s}
 .skc:hover{border-color:rgba(200,169,110,.2);transform:translateY(-4px);box-shadow:0 16px 50px rgba(0,0,0,.4)}
 .skico{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1.1rem}
@@ -148,7 +142,7 @@ section{padding:7rem 5vw}
 
 /* PROJECTS */
 #projets{background:var(--bg2)}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1.6rem;margin-top:3.5rem}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.6rem;margin-top:3.5rem}
 .pc{background:var(--bg3);border:1px solid var(--border);border-radius:1.2rem;overflow:hidden;transition:all .3s;cursor:pointer;position:relative}
 .pc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--a2),transparent);opacity:0;transition:opacity .3s;z-index:1}
 .pc:hover{border-color:rgba(200,169,110,.2);transform:translateY(-6px);box-shadow:0 28px 70px rgba(0,0,0,.6)}
@@ -169,21 +163,20 @@ section{padding:7rem 5vw}
 .mov.on{display:flex}
 .mbox{background:var(--bg2);border:1px solid var(--border);border-radius:1.5rem;width:100%;max-width:1060px;max-height:92vh;overflow:hidden;display:flex;flex-direction:column;animation:mIn .28s ease;box-shadow:0 40px 100px rgba(0,0,0,.8)}
 @keyframes mIn{from{opacity:0;transform:scale(.95) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}
-.mhead{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);gap:1rem}
+.mhead{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);gap:1rem;flex-wrap:wrap}
 .mhead-title{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:var(--ink)}
-.murl-txt{font-size:.7rem;color:var(--muted)}
+.murl-txt{font-size:.7rem;color:var(--muted);word-break:break-all}
 .mcl{background:none;border:1px solid var(--border);color:var(--muted);font-size:.85rem;cursor:pointer;padding:.3rem .7rem;border-radius:.4rem;transition:all .2s;flex-shrink:0}
 .mcl:hover{color:var(--ink);border-color:rgba(255,255,255,.2)}
 .mframe{flex:1;overflow:hidden;background:#fff}
-.mframe iframe{width:100%;height:580px;border:none;display:block}
-.mfoot{display:flex;gap:.8rem;padding:.9rem 1.5rem;border-top:1px solid var(--border)}
+.mframe iframe{width:100%;height:560px;border:none;display:block}
+.mfoot{display:flex;gap:.8rem;padding:.9rem 1.5rem;border-top:1px solid var(--border);flex-wrap:wrap}
 
 /* ── COMMUNITY ── */
 #community{background:var(--bg3)}
 .cm-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.atext strong{color:var(--ink2)}
 
-/* POSTER GRID — 3 haut + 3 bas */
+/* POSTER GRID */
 .poster-section{display:flex;flex-direction:column;gap:1rem}
 .poster-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
 .cm-poster{aspect-ratio:3/4;border-radius:.8rem;overflow:hidden;border:1px solid var(--border);background:var(--bg2);cursor:pointer;transition:all .25s;position:relative}
@@ -201,7 +194,6 @@ section{padding:7rem 5vw}
 .lbox-caption{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);font-size:.8rem;color:var(--muted);background:rgba(0,0,0,.7);padding:.4rem 1rem;border-radius:2rem;white-space:nowrap;backdrop-filter:blur(8px)}
 .lbox-ph{max-width:340px;aspect-ratio:3/4;border-radius:1rem;background:var(--bg2);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;color:var(--muted);font-size:.85rem;text-align:center;padding:2rem;animation:mIn .25s ease}
 .lbox-ph .lph-num{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;color:rgba(200,169,110,.18)}
-
 .cm-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
 .cms{background:var(--card);border:1px solid var(--border);border-radius:1rem;padding:1.2rem;text-align:center;transition:all .2s}
 .cms:hover{transform:translateY(-3px);border-color:rgba(200,169,110,.15)}
@@ -217,7 +209,7 @@ section{padding:7rem 5vw}
 .citem:hover{border-color:rgba(200,169,110,.2);transform:translateX(4px)}
 .cico{width:36px;height:36px;border-radius:.6rem;background:rgba(200,169,110,.08);border:1px solid rgba(200,169,110,.15);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
 .csub{font-size:.63rem;color:var(--muted);margin-bottom:.1rem}
-.cvstrip{background:rgba(200,169,110,.06);border:1px solid rgba(200,169,110,.18);border-radius:1.2rem;padding:1.5rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-top:.5rem;flex-wrap:wrap}
+.cvstrip{background:rgba(200,169,110,.06);border:1px solid rgba(200,169,110,.18);border-radius:1.2rem;padding:1.5rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-top:.5rem}
 .cvstrip h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:var(--ink);margin-bottom:.2rem}
 .cvstrip p{font-size:.75rem;color:var(--muted)}
 .cform{display:flex;flex-direction:column;gap:.85rem}
@@ -242,63 +234,92 @@ footer{padding:2rem 5vw;border-top:1px solid var(--border);display:flex;align-it
 .rvr{opacity:0;transform:translateX(24px);transition:opacity .72s ease,transform .72s ease}
 .rv.vis,.rvl.vis,.rvr.vis{opacity:1;transform:none}
 
-/* ========== RESPONSIVE IMPROVED (strictly responsive, no content changes) ========== */
-@media(max-width:960px){
-  .hero-inner,.ag,.cong,.cm-inner{grid-template-columns:1fr}
+/* ═══════════════════════════════════════
+   RESPONSIVE — TABLETTE (≤1024px)
+═══════════════════════════════════════ */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:0}
   .hvisual{display:none}
-  .hero{padding:5rem 5vw 3rem}
-  .hero-stats{justify-content:flex-start}
-  .dual-ticker{margin-top:1rem}
-  nav{padding:1rem 5vw}
+  .ag{grid-template-columns:1fr;gap:3rem}
+  .cm-inner{grid-template-columns:1fr;gap:3rem}
+  .cong{grid-template-columns:1fr;gap:3rem}
+  .fb1,.fb2,.fb3{display:none}
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — MOBILE (≤768px)
+═══════════════════════════════════════ */
+@media(max-width:768px){
+  nav{padding:.9rem 5vw}
   .nlinks,.ncta{display:none}
   .hbg{display:flex}
-  .cvstrip{flex-direction:column;text-align:center;align-items:stretch}
-  .cvstrip button{width:100%}
-  .mframe iframe{height:480px}
-}
-@media(max-width:740px){
-  .poster-row{grid-template-columns:repeat(3,1fr);gap:0.6rem}
-  .cm-poster-ph .ph-num{font-size:1rem}
-  .cm-poster-ph p{font-size:0.6rem}
-  .hero-btns{flex-direction:row;justify-content:center}
-  .btn{padding:.65rem 1.2rem}
-  .hero h1{font-size:clamp(2.5rem,8vw,4rem)}
-}
-@media(max-width:600px){
-  .hero-stats{gap:1.5rem;flex-wrap:wrap}
-  .hero-btns{flex-direction:column;width:100%}
+  .logo-img{height:38px}
+
+  .hero{padding:5rem 5vw 3rem;min-height:auto}
+  .hero h1{font-size:clamp(1.55rem,7.5vw,2.4rem);line-height:1.12;letter-spacing:-.02em}
+  .hero-desc,.hero-quote{max-width:100%}
+  .hero-desc{font-size:.9rem}
+  .hero-quote{font-size:.84rem}
+  .hero-btns{flex-direction:column}
   .btn{justify-content:center;width:100%}
+  .hero-stats{gap:1.5rem;padding-top:1.5rem}
+  .snum{font-size:1.8rem}
+
   section{padding:4rem 5vw}
-  .stitle{margin-bottom:0.5rem}
-  .tli{padding:1rem}
-  .skgrid{grid-template-columns:1fr}
-  .pgrid{grid-template-columns:1fr}
+
+  .skgrid{grid-template-columns:1fr 1fr;gap:1rem}
+
+  .pgrid{grid-template-columns:1fr;gap:1.4rem}
+
   .frow{grid-template-columns:1fr}
-  .mframe iframe{height:360px}
-  .poster-row{gap:0.5rem}
-  .lbox-caption{white-space:normal;font-size:0.7rem;bottom:1rem}
-  .lbox-close{top:0.8rem;right:0.8rem}
-  .lbox{padding:0.8rem}
-  .mbox{margin:0.5rem}
-  .mhead{flex-wrap:wrap}
-  .murl-txt{max-width:100%}
+
+  .poster-row{grid-template-columns:repeat(3,1fr);gap:.5rem}
+
+  .mframe iframe{height:320px}
+
+  .mov{padding:.75rem}
+  .mbox{border-radius:1rem}
+  .mhead{padding:.75rem 1rem}
+  .mfoot{padding:.75rem 1rem}
+  .mfoot .btn{font-size:.76rem;padding:.5rem 1rem}
+
+  .cvstrip{flex-direction:column;text-align:center}
+  .cvstrip .btn{width:100%;justify-content:center}
+
+  footer{flex-direction:column;align-items:center;text-align:center}
+  .flinks{gap:1.2rem}
+
+  .cm-stats{grid-template-columns:1fr 1fr}
 }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — TRÈS PETIT (≤480px)
+═══════════════════════════════════════ */
 @media(max-width:480px){
-  .hero-eyebrow{font-size:0.6rem;margin-bottom:1rem}
-  .hero-quote{font-size:0.8rem}
-  .pill{font-size:0.65rem;padding:0.2rem 0.7rem}
-  .fb{display:none}
-  .photo-wrap{margin-top:1rem}
-  .photo-placeholder{padding:0.8rem}
-  .ph-init{width:70px;height:70px;font-size:1.4rem}
-  .poster-row{gap:0.4rem}
-  .chip{font-size:0.65rem}
-  .cm-stats{gap:0.6rem}
-  .cms{padding:0.8rem}
-  .cms strong{font-size:1.2rem}
+  .hero h1{font-size:clamp(1.5rem,7.5vw,2rem);letter-spacing:-.015em}
+  .hero-eyebrow{font-size:.65rem}
+  .hero-stats{flex-wrap:wrap;gap:1.2rem}
+  .hero-stats > div{min-width:60px}
+
+  .skgrid{grid-template-columns:1fr}
+
+  .poster-row{grid-template-columns:repeat(3,1fr);gap:.4rem}
+
+  .citem{font-size:.82rem}
+  .citem .cico{width:32px;height:32px;font-size:.85rem}
+
+  .lbox{padding:1rem}
+  .lbox-img{max-width:95vw;max-height:80vh}
+  .lbox-caption{font-size:.7rem;white-space:normal;text-align:center;max-width:80vw}
+  .lbox-close{top:1rem;right:1rem;font-size:.85rem;padding:.3rem .6rem}
+
+  .stitle{font-size:clamp(1.5rem,8vw,2rem)}
+
+  .mmenu a{font-size:1.5rem}
+
+  .tli{padding:1rem 1.2rem}
+  .tlt{font-size:.88rem}
 }
-
-
 </style>
 </head>
 <body>
@@ -307,9 +328,9 @@ footer{padding:2rem 5vw;border-top:1px solid var(--border);display:flex;align-it
 <div id="curf"></div>
 
 <nav id="nav">
- <div class="nlogo">
-  <img src="logo1.png" alt="Ibnou Thiam" class="logo-img" />
-</div>
+  <div class="nlogo">
+    <img src="logo1.png" alt="Ibnou Thiam" class="logo-img" />
+  </div>
   <ul class="nlinks">
     <li><a href="#apropos">À propos</a></li>
     <li><a href="#competences">Compétences</a></li>
@@ -339,9 +360,7 @@ footer{padding:2rem 5vw;border-top:1px solid var(--border);display:flex;align-it
       <p class="hero-desc">Étudiant en <strong>Master 1 — Sciences des Données & Génie Logiciel</strong>, je construis des sites web qui servent vraiment les gens qui les utilisent.</p>
       <p class="hero-quote">J'ai commencé le développement par curiosité… aujourd'hui j'aide des entreprises à se digitaliser. Ce que j'aime le plus ? Voir un client utiliser quelque chose que j'ai construit.</p>
 
-      <!-- DEUX RANGÉES DE DÉFILEMENT -->
       <div class="dual-ticker">
-        <!-- Rangée 1 : Tech stack → -->
         <div class="ticker-row">
           <div class="ticker-belt">
             <div class="ticker-belt-inner">
@@ -364,7 +383,6 @@ footer{padding:2rem 5vw;border-top:1px solid var(--border);display:flex;align-it
             </div>
           </div>
         </div>
-        <!-- Rangée 2 : Soft skills ← (sens inverse, décalée) -->
         <div class="ticker-row">
           <div class="ticker-belt">
             <div class="ticker-belt-inner rev">
@@ -399,7 +417,6 @@ footer{padding:2rem 5vw;border-top:1px solid var(--border);display:flex;align-it
       </div>
     </div>
 
-    <!-- PHOTO -->
     <div class="hvisual">
       <div class="photo-wrap">
         <div class="photo-placeholder">
@@ -470,76 +487,28 @@ footer{padding:2rem 5vw;border-top:1px solid var(--border);display:flex;align-it
       <p class="ssub">Cliquez sur un projet pour voir le site en direct dans le portfolio.</p>
     </div>
     <div class="pgrid">
-
       <div class="pc rv" onclick="openModal('Africodex Digital','Services informatiques & transformation numérique','https://africodexdigital.com/')">
-        <div class="pprev">
-          <iframe src="https://africodexdigital.com/" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin" title="Africodex Digital"></iframe>
-          <div class="ppill">Site Vitrine</div>
-        </div>
-        <div class="pbody">
-          <h3>Africodex Digital</h3>
-          <p>Créé pour aider une entreprise informatique à présenter ses services et attirer de nouveaux clients en ligne.</p>
-          <div class="pstack"><span class="ps">React.js</span><span class="ps">Node.js</span><span class="ps">Vercel</span><span class="ps">GitHub</span></div>
-          <span class="plink">Voir le site →</span>
-        </div>
+        <div class="pprev"><iframe src="https://africodexdigital.com/" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin" title="Africodex Digital"></iframe><div class="ppill">Site Vitrine</div></div>
+        <div class="pbody"><h3>Africodex Digital</h3><p>Créé pour aider une entreprise informatique à présenter ses services et attirer de nouveaux clients en ligne.</p><div class="pstack"><span class="ps">React.js</span><span class="ps">Node.js</span><span class="ps">Vercel</span><span class="ps">GitHub</span></div><span class="plink">Voir le site →</span></div>
       </div>
-
       <div class="pc rv" style="transition-delay:.08s" onclick="openModal('CAFC','Cabinet Fiscal & Conseils','https://cafc-63zx.vercel.app/')">
-        <div class="pprev">
-          <iframe src="https://cafc-63zx.vercel.app/" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin" title="CAFC"></iframe>
-          <div class="ppill">Cabinet Fiscal</div>
-        </div>
-        <div class="pbody">
-          <h3>CAFC</h3>
-          <p>Créé pour aider un cabinet fiscal à présenter ses services et trouver plus de clients en ligne.</p>
-          <div class="pstack"><span class="ps">React.js</span><span class="ps">Node.js</span><span class="ps">PostgreSQL</span></div>
-          <span class="plink">Voir le site →</span>
-        </div>
+        <div class="pprev"><iframe src="https://cafc-63zx.vercel.app/" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin" title="CAFC"></iframe><div class="ppill">Cabinet Fiscal</div></div>
+        <div class="pbody"><h3>CAFC</h3><p>Créé pour aider un cabinet fiscal à présenter ses services et trouver plus de clients en ligne.</p><div class="pstack"><span class="ps">React.js</span><span class="ps">Node.js</span><span class="ps">PostgreSQL</span></div><span class="plink">Voir le site →</span></div>
       </div>
-
       <div class="pc rv" style="transition-delay:.16s" onclick="openModal('Bijouterie Thiam Gold','E-commerce — Vente d\'or & bijoux','https://bijouteriethiamgold.vercel.app/')">
-        <div class="pprev">
-          <iframe src="https://bijouteriethiamgold.vercel.app/" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin" title="Bijouterie Thiam Gold"></iframe>
-          <div class="ppill">E-Commerce</div>
-        </div>
-        <div class="pbody">
-          <h3>Bijouterie Thiam Gold</h3>
-          <p>Créé pour permettre à une bijouterie de vendre ses produits en ligne — interface simple, élégante et accessible.</p>
-          <div class="pstack"><span class="ps">React.js</span><span class="ps">Node.js</span><span class="ps">PostgreSQL</span><span class="ps">Vercel</span></div>
-          <span class="plink">Voir le site →</span>
-        </div>
+        <div class="pprev"><iframe src="https://bijouteriethiamgold.vercel.app/" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin" title="Bijouterie Thiam Gold"></iframe><div class="ppill">E-Commerce</div></div>
+        <div class="pbody"><h3>Bijouterie Thiam Gold</h3><p>Créé pour permettre à une bijouterie de vendre ses produits en ligne — interface simple, élégante et accessible.</p><div class="pstack"><span class="ps">React.js</span><span class="ps">Node.js</span><span class="ps">PostgreSQL</span><span class="ps">Vercel</span></div><span class="plink">Voir le site →</span></div>
       </div>
-
       <div class="pc rv" onclick="openModal('Law Consulting','Plateforme de conseils juridiques','https://low-consulting-ten.vercel.app/')">
-        <div class="pprev">
-          <iframe src="https://low-consulting-ten.vercel.app/" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin" title="Law Consulting"></iframe>
-          <div class="ppill">Juridique</div>
-        </div>
-        <div class="pbody">
-          <h3>Law Consulting</h3>
-          <p>Créé pour un cabinet juridique — présentation des services, domaines d'expertise et prise de contact.</p>
-          <div class="pstack"><span class="ps">React.js</span><span class="ps">Node.js</span><span class="ps">Postman</span></div>
-          <span class="plink">Voir le site →</span>
-        </div>
+        <div class="pprev"><iframe src="https://low-consulting-ten.vercel.app/" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin" title="Law Consulting"></iframe><div class="ppill">Juridique</div></div>
+        <div class="pbody"><h3>Law Consulting</h3><p>Créé pour un cabinet juridique — présentation des services, domaines d'expertise et prise de contact.</p><div class="pstack"><span class="ps">React.js</span><span class="ps">Node.js</span><span class="ps">Postman</span></div><span class="plink">Voir le site →</span></div>
       </div>
-
       <div class="pc rv" style="transition-delay:.08s" onclick="openModal('Yobante','Expédition de colis France ↔ Sénégal','https://yobante-big6.vercel.app/')">
-        <div class="pprev">
-          <iframe src="https://yobante-big6.vercel.app/" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin" title="Yobante"></iframe>
-          <div class="ppill">Expédition</div>
-        </div>
-        <div class="pbody">
-          <h3>Yobante</h3>
-          <p>Créé pour présenter un service d'expédition France-Sénégal avec informations tarifaires et contact rapide.</p>
-          <div class="pstack"><span class="ps">React.js</span><span class="ps">Node.js</span><span class="ps">GitHub</span></div>
-          <span class="plink">Voir le site →</span>
-        </div>
+        <div class="pprev"><iframe src="https://yobante-big6.vercel.app/" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin" title="Yobante"></iframe><div class="ppill">Expédition</div></div>
+        <div class="pbody"><h3>Yobante</h3><p>Créé pour présenter un service d'expédition France-Sénégal avec informations tarifaires et contact rapide.</p><div class="pstack"><span class="ps">React.js</span><span class="ps">Node.js</span><span class="ps">GitHub</span></div><span class="plink">Voir le site →</span></div>
       </div>
-
       <div class="pc rv" style="transition-delay:.16s;border-style:dashed;cursor:default">
-        <div class="pprev" style="background:transparent;border:none;height:205px;display:flex;align-items:center;justify-content:center">
-          <div style="font-size:3rem;opacity:.1">+</div>
-        </div>
+        <div class="pprev" style="background:transparent;border:none;height:205px;display:flex;align-items:center;justify-content:center"><div style="font-size:3rem;opacity:.1">+</div></div>
         <div class="pbody" style="text-align:center">
           <h3>Votre projet</h3>
           <p style="margin-bottom:1.2rem">Tu as un projet ? Écris-moi, on en parle.</p>
@@ -596,38 +565,19 @@ footer{padding:2rem 5vw;border-top:1px solid var(--border);display:flex;align-it
           <div class="cms"><div class="ico">📈</div><strong>+70%</strong><span>Engagement</span></div>
         </div>
       </div>
-
-      <!-- 3 AFFICHES EN HAUT + 3 EN BAS -->
       <div class="rvr">
         <div class="poster-section">
-          <!-- RANGÉE DU HAUT -->
           <div class="poster-row">
-            <div class="cm-poster" onclick="openLightbox(0)">
-                <img src="affiche1.png" alt="Affiche 1">
-              </div>
-
-                <div class="cm-poster" onclick="openLightbox(1)">
-                <img src="affiche2.png" alt="Affiche 2">
-              </div>
-
-                <div class="cm-poster" onclick="openLightbox(2)">
-                <img src="affiche3.png" alt="Affiche 3">
-              </div>
+            <div class="cm-poster" onclick="openLightbox(0)"><img src="affiche1.png" alt="Affiche 1"></div>
+            <div class="cm-poster" onclick="openLightbox(1)"><img src="affiche2.png" alt="Affiche 2"></div>
+            <div class="cm-poster" onclick="openLightbox(2)"><img src="affiche3.png" alt="Affiche 3"></div>
           </div>
-          <!-- RANGÉE DU BAS -->
           <div class="poster-row">
-              <div class="cm-poster" onclick="openLightbox(3)">
-                  <img src="affiche4.png" alt="Affiche 4">
-                </div>
-             <div class="cm-poster" onclick="openLightbox(4)">
-                <img src="affiche5.png" alt="Affiche 5">
-              </div>
-            <div class="cm-poster" onclick="openLightbox(5)">
-                <img src="affiche6.png" alt="Affiche -">
-              </div>
+            <div class="cm-poster" onclick="openLightbox(3)"><img src="affiche4.png" alt="Affiche 4"></div>
+            <div class="cm-poster" onclick="openLightbox(4)"><img src="affiche5.png" alt="Affiche 5"></div>
+            <div class="cm-poster" onclick="openLightbox(5)"><img src="affiche6.png" alt="Affiche 6"></div>
           </div>
         </div>
-        <p style="font-size:.7rem;color:var(--muted);margin-top:.9rem;text-align:center;opacity:.6">
       </div>
     </div>
   </div>
@@ -698,25 +648,20 @@ footer{padding:2rem 5vw;border-top:1px solid var(--border);display:flex;align-it
 </footer>
 
 <script>
-/* CURSOR */
 const cur=document.getElementById('cur'),curf=document.getElementById('curf');
 let mx=0,my=0,fx=0,fy=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
 (function a(){fx+=(mx-fx)*.11;fy+=(my-fy)*.11;curf.style.left=fx+'px';curf.style.top=fy+'px';requestAnimationFrame(a)})();
 
-/* NAV */
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('stuck',scrollY>50));
 
-/* MOBILE MENU */
 document.getElementById('hbg').addEventListener('click',()=>document.getElementById('mmenu').classList.add('on'));
 document.getElementById('mclose').addEventListener('click',()=>document.getElementById('mmenu').classList.remove('on'));
 document.querySelectorAll('.ml').forEach(l=>l.addEventListener('click',()=>document.getElementById('mmenu').classList.remove('on')));
 
-/* SCROLL REVEAL */
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}})},{threshold:.1});
 document.querySelectorAll('.rv,.rvl,.rvr').forEach(r=>obs.observe(r));
 
-/* SITE MODAL */
 function openModal(title,desc,url){
   document.getElementById('mtitle').textContent=title;
   document.getElementById('murl').textContent=url;
@@ -732,15 +677,8 @@ function closeModDirect(){
   document.body.style.overflow='';
 }
 
-/* LIGHTBOX AFFICHES */
-const posterSrc = [
-  'affiche1.png',
-  'affiche2.png',
-  'affiche3.png',
-  'affiche4.png',
-  'affiche5.png',
-  'affiche6.png'
-];const posterLabels = ['Affiche 1','Affiche 2','Affiche 3','Affiche 4','Affiche 5','Affiche 6'];
+const posterSrc=['affiche1.png','affiche2.png','affiche3.png','affiche4.png','affiche5.png','affiche6.png'];
+const posterLabels=['Affiche 1','Affiche 2','Affiche 3','Affiche 4','Affiche 5','Affiche 6'];
 
 function openLightbox(idx){
   const lbox=document.getElementById('lbox');
@@ -750,7 +688,7 @@ function openLightbox(idx){
   if(src){
     content.innerHTML=`<img src="${src}" alt="${posterLabels[idx]}" class="lbox-img">`;
   } else {
-    content.innerHTML=`<div class="lbox-ph"><div class="lph-num">0${idx+1}</div><p style="color:var(--muted);font-size:.85rem">Remplacez posterSrc[${idx}]<br>par le chemin de votre image</p><code style="font-size:.68rem;opacity:.5;margin-top:.5rem">posterSrc[${idx}] = 'affiche${idx+1}.jpg'</code></div>`;
+    content.innerHTML=`<div class="lbox-ph"><div class="lph-num">0${idx+1}</div><p style="color:var(--muted);font-size:.85rem">Image non trouvée</p></div>`;
   }
   cap.textContent=posterLabels[idx];
   lbox.classList.add('on');
@@ -764,7 +702,6 @@ function closeLboxDirect(){
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModDirect();closeLboxDirect()}});
 
-/* CV */
 function downloadCV(){
   const a=document.createElement('a');
   a.href='CV_Ibnou_Thiam.pdf';
@@ -772,7 +709,6 @@ function downloadCV(){
   a.click();
 }
 
-/* FORM */
 function sendForm(btn){
   const o=btn.textContent;btn.textContent='Envoi…';btn.disabled=true;
   setTimeout(()=>{
